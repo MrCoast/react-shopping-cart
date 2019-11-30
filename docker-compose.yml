@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    image: node:10
+    volumes:      
+      - .:/app
+      - notused:/app/node_modules
+    command:
+      bash -c "cd /app && npm i --no-shrinkwrap --no-package-lock && npm start"
+
+volumes:
+  notused:

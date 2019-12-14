@@ -9,6 +9,8 @@ app.use(cors());
 const port = 8001;
 
 app.get('/api/products', (req, res) => {
+  // uncomment this to delay API response
+  // setTimeout(() => res.sendFile(path.join(__dirname, 'data', 'products.json')), 5000);
   res.sendFile(path.join(__dirname, 'data', 'products.json'));
 });
 

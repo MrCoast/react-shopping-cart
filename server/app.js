@@ -2,9 +2,13 @@ const path = require('path');
 
 const express = require('express');
 const cors = require('cors');
+const compression = require('compression');
 
 const app = express();
 app.use(cors());
+
+// comment this to disable HTTP gzip compression
+app.use(compression({ filter: req => !req.headers['x-no-compression'] }));
 
 const port = 8001;
 

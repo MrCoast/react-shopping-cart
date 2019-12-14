@@ -6,7 +6,6 @@ const noopServiceWorkerMiddleware = require('react-dev-utils/noopServiceWorkerMi
 const ignoredFiles = require('react-dev-utils/ignoredFiles');
 const paths = require('./paths');
 const fs = require('fs');
-const express = require('express');
 const compression = require('compression');
 
 const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';

@@ -3,8 +3,8 @@
 * 3. Toggle Expires HTTP header for static files in Express
 - 4. Toggle Express API response speed
 * 5. Toggle HTTP/2
-* 6. Toggle gzip compression
-* 7. Toggle js minify feature
++ 6. Toggle gzip compression
++ 7. Toggle js minify feature
 
 
 __________________

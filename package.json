@@ -17,6 +17,7 @@
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "concurrently": "^4.0.1",
     "cors": "^2.8.5",
+    "compression": "^1.7.4",
     "css-loader": "1.0.0",
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",

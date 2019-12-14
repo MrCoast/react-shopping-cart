@@ -103,6 +103,15 @@ module.exports = function(proxy, allowedHost) {
 
       // comment this to disable HTTP gzip compression
       app.use(compression({ filter: req => !req.headers['x-no-compression'] }));
+
+      // comment this to disable Expires HTTP header for static files
+      app.use((req, res, next) => {
+        if (req.url.indexOf('/static/') === 0) {
+          res.setHeader('Expires', new Date(Date.now() + 2592000000).toUTCString());
+        }
+
+        next();
+      });
     },
   };
 };

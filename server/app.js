@@ -8,14 +8,14 @@ const app = express();
 app.use(cors());
 
 // comment this to disable HTTP gzip compression
-app.use(compression({ filter: req => !req.headers['x-no-compression'] }));
+// app.use(compression({ filter: req => !req.headers['x-no-compression'] }));
 
 const port = 8001;
 
 app.get('/api/products', (req, res) => {
-  // uncomment this to delay API response
-  // setTimeout(() => res.sendFile(path.join(__dirname, 'data', 'products.json')), 5000);
-  res.sendFile(path.join(__dirname, 'data', 'products.json'));
+  // toggle this to switch on/off delay for API response
+  setTimeout(() => res.sendFile(path.join(__dirname, 'data', 'products.json')), 3000);
+  // res.sendFile(path.join(__dirname, 'data', 'products.json'));
 });
 
 app.listen(port, () => {

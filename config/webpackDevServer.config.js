@@ -6,7 +6,7 @@ const noopServiceWorkerMiddleware = require('react-dev-utils/noopServiceWorkerMi
 const ignoredFiles = require('react-dev-utils/ignoredFiles');
 const paths = require('./paths');
 const fs = require('fs');
-const compression = require('compression');
+// const compression = require('compression');
 
 const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
 const host = process.env.HOST || '0.0.0.0';
@@ -32,7 +32,9 @@ module.exports = function(proxy, allowedHost) {
     disableHostCheck:
       !proxy || process.env.DANGEROUSLY_DISABLE_HOST_CHECK === 'true',
     // Enable gzip compression of generated files.
-    compress: true,
+    // comment this to toggle HTTP gzip compression
+    // compress: true,
+    compress: false,
     // Silence WebpackDevServer's own logs since they're generally not useful.
     // It will still show compile warnings and errors with this setting.
     clientLogLevel: 'none',
@@ -101,17 +103,17 @@ module.exports = function(proxy, allowedHost) {
       // https://github.com/facebook/create-react-app/issues/2272#issuecomment-302832432
       app.use(noopServiceWorkerMiddleware());
 
-      // comment this to disable HTTP gzip compression
-      app.use(compression({ filter: req => !req.headers['x-no-compression'] }));
+      // comment this to toggle HTTP gzip compression
+      // app.use(compression({ filter: req => !req.headers['x-no-compression'] }));
 
-      // comment this to disable Expires HTTP header for static files
-      app.use((req, res, next) => {
-        if (req.url.indexOf('/static/') === 0) {
-          res.setHeader('Expires', new Date(Date.now() + 2592000000).toUTCString());
-        }
+      // comment this to toggle Expires HTTP header for static files
+      // app.use((req, res, next) => {
+      //   if (req.url.indexOf('/static/') === 0) {
+      //     res.setHeader('Expires', new Date(Date.now() + 2592000000).toUTCString());
+      //   }
 
-        next();
-      });
+      //   next();
+      // });
     },
   };
 };

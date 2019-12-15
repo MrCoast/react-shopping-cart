@@ -76,9 +76,9 @@ checkBrowsers(paths.appPath, isInteractive)
       return;
     }
 
-    // const config = configFactory('development');
+    const config = configFactory('development');
     // uncomment this to enable js minification
-    const config = configFactory('production');
+    // const config = configFactory('production');
 
     const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
     const appName = require(paths.appPackageJson).name;

@@ -38,10 +38,11 @@ const Product = ({ product, addProduct }) => {
       )}
       <Thumb
         classes="shelf-item__thumb"
-        src={require(`../../../../static/products/${product.sku}_1.webp`)}
+        // change to webp to improve pagespeed
+        src={require(`../../../../static/products/${product.sku}_1.jpg`)}
         // comment width and height to disable
-        width={228}
-        height={330}
+        // width={228}
+        // height={330}
         alt={product.title}
       />
       <p className="shelf-item__title">{product.title}</p>

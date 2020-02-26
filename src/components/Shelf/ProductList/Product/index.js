@@ -40,7 +40,7 @@ const Product = ({ product, addProduct }) => {
         classes="shelf-item__thumb"
         // change to webp to improve pagespeed
         src={require(`../../../../static/products/${product.sku}_1.jpg`)}
-        // comment width and height to disable
+        // uncomment width and height to enable
         // width={228}
         // height={330}
         alt={product.title}

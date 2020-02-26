@@ -10,7 +10,11 @@ services:
       - "3000:3000"
       - "8001:8001"
     command:
-      bash -c "cd /app && npm i --no-shrinkwrap --no-package-lock && npm start"
+      bash -c "
+        cd /app
+        && ([ -d "/app/node_modules/react" ] || npm i --no-shrinkwrap --no-package-lock)
+        && npm start
+      "
 
 volumes:
   notused:

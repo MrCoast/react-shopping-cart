@@ -4,8 +4,7 @@
 - 4. Toggle Express API response speed - server/app.js
 * 5. Toggle HTTP/2
 - 6. Toggle gzip compression for frontend - config/webpackDevServer.config.js
-- 7. Toggle gzip compression for backend - server/app.js
-+ 8. Toggle js minify feature - scripts/start.js - isJsMinificationEnabled = true
++ 7. Toggle js minify feature - scripts/start.js - isJsMinificationEnabled = true
 
 
 __________________

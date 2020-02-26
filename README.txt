@@ -5,7 +5,7 @@
 * 5. Toggle HTTP/2
 - 6. Toggle gzip compression for frontend - config/webpackDevServer.config.js
 - 7. Toggle gzip compression for backend - server/app.js
-+ 8. Toggle js minify feature - scripts/start.js - const config = configFactory('production');
++ 8. Toggle js minify feature - scripts/start.js - isJsMinificationEnabled = true
 
 
 __________________

@@ -10,12 +10,12 @@ app.use(cors());
 
 app.use(compression({ filter: req => !req.headers['x-no-compression'] }));
 
-const port = 8001;
+const port = process.env.PORT || 8001;
 
 app.get('/api/products', (req, res) => {
   // toggle this to switch on/off delay for API response
-  // sendProductsDataFileOptimized(res);
-  sendProductsDataFileSlow(res);
+  // setTimeout(() => res.sendFile(path.join(__dirname, 'data', 'products.json')), 3000);
+  res.sendFile(path.join(__dirname, 'data', 'products.json'));
 });
 
 app.listen(port, () => {

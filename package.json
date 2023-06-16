@@ -57,7 +57,8 @@
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"nodemon --watch config/webpackDevServer.config.js --watch scripts/start.js scripts/start.js\"",
-    "server": "nodemon server/app"
+    "server": "nodemon server/app",
+    "build": "node scripts/build.js"
   },
   "eslintConfig": {
     "extends": "react-app"

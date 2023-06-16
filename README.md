@@ -7,15 +7,31 @@ docker compose us
 ```
 
 ## Production mode
-Example commands:
+Examples of basic commands:
+```
+# API (backend)
+docker build . -f ./docker/server/Dockerfile -t react-shopping-cart-backend:latest
+docker run --rm -p 8001:8001 react-shopping-cart-backend
+
+# Frontend
+docker build . -f ./docker/frontend/Dockerfile -t react-shopping-cart-frontend:latest
+docker run --rm -p 8888:80 react-shopping-cart-frontend
+
+# see your frontend at http://localhost:8888/
+# see your API at http://localhost:8001/api/products
+```
+Examples of commands with parameter overrides:
 ```
 # API (backend)
 docker build . -f ./docker/server/Dockerfile -t react-shopping-cart-backend:latest
 docker run --rm -p 8102:8102 -e PORT=8102 react-shopping-cart-backend
 
 # Frontend
-docker build . -f ./docker/frontend/Dockerfile --build-arg API_URL=http://localhost:8103/api/products -t react-shopping-cart-frontend:latest
+docker build . -f ./docker/frontend/Dockerfile --build-arg API_URL=http://localhost:8102/api/products -t react-shopping-cart-frontend:latest
 docker run --rm -p 8101:80 react-shopping-cart-frontend
+
+# see your frontend at http://localhost:8101/
+# see your API at http://localhost:8102/api/products
 ```
 
 ## List of experiments related to Google PageSpeed Score
